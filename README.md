@@ -34,8 +34,9 @@
   # 生成 ssh  ed25519.pub
   ssh-keygen -t ed25519 -C "941755602@qq.com.com"
   
+  git rm -r --cached .
   
   ```
-
+  
   
 
