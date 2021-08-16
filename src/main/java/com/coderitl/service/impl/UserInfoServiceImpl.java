@@ -35,6 +35,16 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public List<UserInfo> showAll() {
-        return null;
+        List<UserInfo> userInfos = null;
+        // 开启事务
+        try {
+            Utils.begin();
+            userInfos = userInfoDao.selectAll();
+            Utils.commit();
+        } catch (Exception e) {
+            Utils.rollback();
+            e.printStackTrace();
+        }
+        return userInfos;
     }
 }
