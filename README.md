@@ -22,3 +22,20 @@
   ```
 
 + `database.properties`建立在`src/main/resources`文件夹下
+
++ `git`相关命令
+
+  ```bash
+  git remmote rm origin # 删除
+  git remote set-url origin xxx
+  
+  git remote add origin xxx
+  
+  # 生成 ssh  ed25519.pub
+  ssh-keygen -t ed25519 -C "941755602@qq.com.com"
+  
+  
+  ```
+
+  
+
