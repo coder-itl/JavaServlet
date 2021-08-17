@@ -23,6 +23,8 @@
 
 + `database.properties`建立在`src/main/resources`文件夹下
 
+  <img src="https://i.loli.net/2021/08/17/IveujCiJW4pFrS1.png" width="600">
+
 + `git`相关命令
 
   ```bash

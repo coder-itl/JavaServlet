@@ -1,8 +1,6 @@
 package com.coderitl.servlet;
 
 import com.coderitl.entity.UserInfo;
-import com.coderitl.service.UserInfoService;
-import com.coderitl.service.impl.UserInfoServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,13 +11,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/showall")
-public class LoginShowAll extends HttpServlet {
+@WebServlet("/showalljsp")
+public class ShowAllUserInfoJsp extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        UserInfoService userInfoService = new UserInfoServiceImpl();
-        List<UserInfo> userInfos = userInfoService.showAll();
+        // 获取
+        List<UserInfo> userInfos = (List) req.getAttribute("userinfo");
         PrintWriter printWriter = resp.getWriter();
         if (userInfos != null) {
             printWriter.println("<html>");
@@ -56,6 +54,6 @@ public class LoginShowAll extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPut(req, resp);
+        doGet(req, resp);
     }
 }

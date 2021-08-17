@@ -16,6 +16,32 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <junit.version>5.7.1</junit.version>
     </properties>
+    <build>
+        <!-- 资源处理 -->
+        <resources>
+            <resource>
+                <!-- 所在目录 -->
+                <directory>src/main/java</directory>
+                <!-- 包括目录下的 .properties,.xml文件都会扫描到 -->
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <!-- filtering 选项false 不启用过滤器,*.properties 已经起到过滤作用了  -->
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
 
     <dependencies>
         <dependency>
@@ -69,29 +95,5 @@
 
     </dependencies>
 
-    <build>
-        <!-- 资源处理 -->
-        <resources>
-            <resource>
-                <!-- 所在目录 -->
-                <directory>src/main/java</directory>
-                <!-- 包括目录下的 .properties,.xml文件都会扫描到 -->
-                <includes>
-                    <include>**/*.properties</include>
-                    <include>**/*.xml</include>
-                </includes>
-                <!-- filtering 选项false 不启用过滤器,*.properties 已经起到过滤作用了  -->
-                <filtering>false</filtering>
-            </resource>
-        </resources>
 
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version>
-            </plugin>
-
-        </plugins>
-    </build>
 </project>
